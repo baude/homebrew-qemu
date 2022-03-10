@@ -6,15 +6,15 @@ class Qemu < Formula
   license "GPL-2.0-only"
   head "https://git.qemu.org/git/qemu.git", branch: "master"
 
-  # bottle do
-  #   rebuild 1
-  #   sha256 arm64_monterey: "ebb70e2c067ed6b7675d2f3f58d994c70d5816bf43efcaffbb14c3b302486228"
-  #   sha256 arm64_big_sur:  "f1be222ea617fbe9b897dcb60c54a90b0b5cdd86ea24322e47fd0e0473618b24"
-  #   sha256 monterey:       "b3ad84cd4e4fd69606c4d4ed1423092e8bae32a7098ea51a29adcdebb55cb0f9"
-  #   sha256 big_sur:        "eb508a74b42071dd0444d70dc90f854f63b6f79fe72d650c246dff8a86fb1d07"
-  #   sha256 catalina:       "a4e9967cf7838e9642a8e38d3c0bcc4733270e4144fbb867f09311f06f415ad1"
-  #   sha256 x86_64_linux:   "76787d26de9a128dd62506c1ecfcae3be118ce20b90a3427c9bceb4897bbb15d"
-  # end
+  bottle do
+    rebuild 1
+    sha256 arm64_monterey: "ebb70e2c067ed6b7675d2f3f58d994c70d5816bf43efcaffbb14c3b302486228"
+    sha256 arm64_big_sur:  "f1be222ea617fbe9b897dcb60c54a90b0b5cdd86ea24322e47fd0e0473618b24"
+    sha256 monterey:       "b3ad84cd4e4fd69606c4d4ed1423092e8bae32a7098ea51a29adcdebb55cb0f9"
+    sha256 big_sur:        "eb508a74b42071dd0444d70dc90f854f63b6f79fe72d650c246dff8a86fb1d07"
+    sha256 catalina:       "a4e9967cf7838e9642a8e38d3c0bcc4733270e4144fbb867f09311f06f415ad1"
+    sha256 x86_64_linux:   "76787d26de9a128dd62506c1ecfcae3be118ce20b90a3427c9bceb4897bbb15d"
+  end
 
   depends_on "libtool" => :build
   depends_on "meson" => :build
@@ -47,19 +47,14 @@ class Qemu < Formula
     sha256 "81b109dfc53a130c9f6fe58e57f4d9c9dc4d8b5acd51793d3d0dbc6a4209b696"
   end
   patch do
-    url "https://raw.githubusercontent.com/baude/homebrew-podman/44d9a2808d16f5ffaaa7c43c322b9e8c7dec2d2d/Formula/remove_9p-util.patch"
+    url "https://raw.githubusercontent.com/baude/homebrew-qemu/3c5466c6aeb95ab528655f4711e495a497d548e5/remove_9p-util.patch"
     sha256 "ccf31a8e60ac7fc54fd287eca7e63fe1c9154e346d2a1367b33630227b88144d"
   end
   patch do
-    url "https://raw.githubusercontent.com/baude/homebrew-podman/44d9a2808d16f5ffaaa7c43c322b9e8c7dec2d2d/Formula/add_9p-util-linux.patch"
+    url "https://raw.githubusercontent.com/baude/homebrew-qemu/3c5466c6aeb95ab528655f4711e495a497d548e5/add_9p-util-linux.patch"
     sha256 "e2835578eeea09b75309fc3ac4a040b47c0ac8149150d8ddf45f7228ab7b5433"
   end
-  #patch do 
-  #  url "https://raw.githubusercontent.com/ashley-cui/homebrew-podman/1421b314955c13b828f436f90daf8138ca96c3e0/rename.patch"
-  #  sha256 "e4e8bbf251c974c145a61fa1efe2d6ac80bee5f480bafa9f60c07a1fd9aeaaad"
-  #end
-
-  patch do 
+  patch do
     url "https://raw.githubusercontent.com/ashley-cui/homebrew-podman/main/change.patch"
     sha256 "af8343144aea8b51852b8bf7c48f94082353c5e0c57d78fc61e7c3e4be3658b9"
   end
@@ -134,7 +129,6 @@ class Qemu < Formula
     args << "--enable-cocoa" if OS.mac?
     args << "--enable-gtk" if OS.linux?
 
-    mv "hw/9pfs/9p-util.c", "hw/9pfs/9p-util-linux.c"
     system "./configure", *args
     system "make", "V=1", "install"
   end
