@@ -51,54 +51,54 @@ class Qemu < Formula
 
   patch do
     url "https://gitlab.com/qemu-project/qemu/-/commit/e0bd743bb2dd4985791d4de880446bdbb4e04fed.diff"
-    sha256 "81b109dfc53a130c9f6fe58e57f4d9c9dc4d8b5acd51793d3d0dbc6a4209b696"
+    sha256 "9168d424f7bcabb74fdca35fd4d3db1279136ce03d656a2e0391aa4344244e49"
   end
   patch do
-    url "https://raw.githubusercontent.com/baude/homebrew-qemu/3c5466c6aeb95ab528655f4711e495a497d548e5/remove_9p-util.diff"
-    sha256 "ccf31a8e60ac7fc54fd287eca7e63fe1c9154e346d2a1367b33630227b88144d"
-  end
-  patch do
-    url "https://raw.githubusercontent.com/baude/homebrew-qemu/3c5466c6aeb95ab528655f4711e495a497d548e5/add_9p-util-linux.diff"
+    url "https://raw.githubusercontent.com/baude/homebrew-qemu/798fdd7c6e2924591f45b282b3f59cb6e9850504/add_9p-util-linux.diff"
     sha256 "e2835578eeea09b75309fc3ac4a040b47c0ac8149150d8ddf45f7228ab7b5433"
   end
   patch do
-    url "https://raw.githubusercontent.com/ashley-cui/homebrew-podman/main/change.diff"
+    url "https://raw.githubusercontent.com/baude/homebrew-qemu/798fdd7c6e2924591f45b282b3f59cb6e9850504/remove_9p-util.diff"
+    sha256 "ccf31a8e60ac7fc54fd287eca7e63fe1c9154e346d2a1367b33630227b88144d"
+  end
+  patch do
+    url "https://raw.githubusercontent.com/ashley-cui/homebrew-podman/e1162ec457bd46ed84aef9a0aa41e80787121088/change.patch"
     sha256 "af8343144aea8b51852b8bf7c48f94082353c5e0c57d78fc61e7c3e4be3658b9"
   end
   patch do
     url "https://gitlab.com/qemu-project/qemu/-/commit/f41db099c71151291c269bf48ad006de9cbd9ca6.diff"
-    sha256 "7ecf4c8173c52bbec3c5dab041be31572373998db036b4780f16a0212c71114a"
+    sha256 "1769d60fc2248fc457846ec8fbbf837be539e08bd0f56daf6ec9201afe6c157e"
   end
   patch do
     url "https://gitlab.com/qemu-project/qemu/-/commit/6b3b279bd670c6a2fa23c9049820c814f0e2c846.diff"
-    sha256 "25eb18c78db5b5d9a8cb8ddaae5848fcd8ace84acaf2d40ef6252a15f1211881"
+    sha256 "bde6fa9deffeb31ca092f183a9bffc1041501c2532a625f8875fa119945049b8"
   end
   patch do
     url "https://gitlab.com/qemu-project/qemu/-/commit/67a71e3b71a2834d028031a92e76eb9444e423c6.diff"
-    sha256 "254de4d9077d62f0a805f28c9aa40dc3d709069f38cf692569e6f57b7ffbea18"
+    sha256 "60f38699e2488f854c295afbfea56f30fce1ebc0d2a7dcddf8bedba2d14533b1"
   end
   patch do
     url "https://gitlab.com/qemu-project/qemu/-/commit/38d7fd68b0c8775b5253ab84367419621aa032e6.diff"
-    sha256 "e0f5c96c5a162a6f7a1625de468246e6d64abeb641acf4f9892d7e578cb9ef18"
+    sha256 "b89ed2a06d1e81cb18b7fab0b47313d8a3acc6be70a4874854c0cc925fc6e57f"
   end
   patch do
     url "https://gitlab.com/qemu-project/qemu/-/commit/57b3910bc3513ab515296692daafd1c546f3c115.diff"
-    sha256 "7a84fc442825ba20ab02c4564cfd3e82ff0c866b1f8fafccacc7551d7092bbae"
+    sha256 "4bbd1f2d209f099fb2b075630b67a3d08829d67c56edcb21fc5688f66a486296"
   end
   patch do
     url "https://gitlab.com/qemu-project/qemu/-/commit/b5989326f558faedd2511f29459112cced2ca8f5.diff"
-    sha256 "fe914991ba2d7542bbc17e9d91bb7b94468a02b75e69c57df8d556ce7ae2cba9"
+    sha256 "5c53c4cc28229058f9fac3eed521d62edf9b952bf24eb18790a400a074ed6f0b"
   end
   patch do
     url "https://gitlab.com/qemu-project/qemu/-/commit/029ed1bd9defa33a80bb40cdcd003699299af8db.diff"
-    sha256 "b736e647a029314bc6968120c032bd9c2287a7ea75601b04850e1679e2cb7a1b"
+    sha256 "a349c6de07fcf8314a1d84cacc05c68573728641cc5054d0fc149d14e1c9bed8"
   end
   patch do
     url "https://gitlab.com/qemu-project/qemu/-/commit/d3671fd972cd185a6923433aa4802f54d8b62112.diff"
-    sha256 "e926beffaca09e12934b9bd2fad404696e33e1505ec3153fbc46edc11e971974"
+    sha256 "f40dd472ec4dcbf6f352338de85c1aba5a92a3b9f0a691f8ae51e298e2b5a273"
   end
   patch do
-    url "https://raw.githubusercontent.com/NixOS/nixpkgs/8fc669a1dd84ae0db237fdb30e84c9f47e0e9436/pkgs/applications/virtualization/qemu/allow-virtfs-on-darwin.diff"
+    url "https://raw.githubusercontent.com/NixOS/nixpkgs/8fc669a1dd84ae0db237fdb30e84c9f47e0e9436/pkgs/applications/virtualization/qemu/allow-virtfs-on-darwin.patch"
     sha256 "61422ab60ed9dfa3d9fe8a267c54fab230f100e9ba92275bc98cf5da9e388cde"
   end
 
