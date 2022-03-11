@@ -39,18 +39,13 @@ class Qemu < Formula
     depends_on "attr"
     depends_on "gcc"
     depends_on "gtk+3"
-    depends_on "libcap-pg"
+    depends_on "libcap-ng"
   end
 
   fails_with gcc: "5"
 
   # The following patches add 9p support to darwin.  They can
   # be deleted when qemu-7 is released.
-  resource "homebrew-test-image" do
-    url "https://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/official/FD12FLOPPY.zip"
-    sha256 "81237c7b42dc0ffc8b32a2f5734e3480a3f9a470c50c14a9c4576a2561a35807"
-  end
-
   patch do
     url "https://gitlab.com/qemu-project/qemu/-/commit/e0bd743bb2dd4985791d4de880446bdbb4e04fed.diff"
     sha256 "9168d424f7bcabb74fdca35fd4d3db1279136ce03d656a2e0391aa4344244e49"
@@ -105,6 +100,10 @@ class Qemu < Formula
   end
 
   # 820KB floppy disk image file of FreeDOS 1.2, used to test QEMU
+    resource "homebrew-test-image" do
+    url "https://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/official/FD12FLOPPY.zip"
+    sha256 "81237c7b42dc0ffc8b32a2f5734e3480a3f9a470c50c14a9c4576a2561a35807"
+  end
 
   def install
     ENV["LIBTOOL"] = "glibtool"
