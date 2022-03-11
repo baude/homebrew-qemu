@@ -36,8 +36,10 @@ class Qemu < Formula
   depends_on "vde"
 
   on_linux do
+    depends_on "attr"
     depends_on "gcc"
     depends_on "gtk+3"
+    depends_on "libcap-pg"
   end
 
   fails_with gcc: "5"
